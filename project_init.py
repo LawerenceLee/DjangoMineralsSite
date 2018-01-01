@@ -17,7 +17,8 @@ project_path = os.path.join(BASE_DIR)
 # notice I changed MYPROJECT to the package that has the settings.py file.
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mineral_site.settings")
 
-# We want to append our project path to the system so Django can find it.
+# We want to append our project path to the system so Django can find it. (Essenitally adds project path to
+# our PATH Variable)
 sys.path.append(project_path)
 
 # This is so my local_settings.py gets loaded.
