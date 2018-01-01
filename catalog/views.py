@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+from .models import Mineral
+
+
+def index(request):
+    minerals = Mineral.objects.all()
+    return render(request, 'catalog/index.html', {"minerals": minerals})
