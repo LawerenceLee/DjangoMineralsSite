@@ -3,4 +3,8 @@ from django.contrib import admin
 from .models import Mineral
 
 
-admin.site.register(Mineral)
+class MineralAdmin(admin.ModelAdmin):
+    list_display = ('name', )
+
+
+admin.site.register(Mineral, MineralAdmin)
