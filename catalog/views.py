@@ -1,4 +1,4 @@
-from random import randint
+from random import choice
 
 from django.shortcuts import get_object_or_404, redirect, render
 
@@ -16,6 +16,6 @@ def detail(request, mineral_name):
 
 
 def random(request):
-    rand_num = randint(1, 873)
-    mineral = get_object_or_404(Mineral, pk=rand_num)
+    minerals = Mineral.objects.all()
+    mineral = choice(minerals)
     return redirect("/{}".format(mineral.name))
